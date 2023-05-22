@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CarLotSimulator
 {
@@ -18,11 +19,53 @@ namespace CarLotSimulator
             //Set the properties for each of the cars
             //Call each of the methods for each car
 
+
+
+
+
             //*************BONUS*************//
 
             // Set the properties utilizing the 3 different ways we learned about, one way for each car
 
+            CarLot autoLot = new CarLot();
+
+
+            Car carA = new Car();
+            
+            autoLot.CarsList.Add(carA);
+            
+            carA.Year = 2022;
+            carA.Make = "Mitsubishi";
+            carA.Model = "Outlander";
+            carA.EngNoise = "Vroom";
+            carA.HnkNoise = "Beep Beep";
+            carA.Driveable = true;
+
+
+            carA.MakeEngineNoise();
+            carA.MakeHonkNoise();
+
+            Car carB = new Car() { Year = 2019, Make = "Chevrolet", Model = "Cruze", EngNoise = "Vroom Vroom", HnkNoise = "Beepy Beep", Driveable = true };
+            autoLot.CarsList.Add(carB);
+
+            carB.MakeEngineNoise();
+            carB.MakeHonkNoise();
+
+            Car carC = new Car(2018, "Nissan", "Versa", "Zoomy Zoom", "Beepity Beepy");
+
+            autoLot.CarsList.Add(carC);
+
+            carC.MakeEngineNoise();
+            carC.MakeHonkNoise();
+
+            Console.WriteLine("------------------");
+
             //*************BONUS X 2*************//
+            foreach (var auto in autoLot.CarsList)
+            {
+                Console.WriteLine();
+                Console.WriteLine($"Year: {auto.Year} Make: {auto.Make} Model: {auto.Model}");
+            }
 
             //Create a CarLot class
             //It should have at least one property: a List of cars
